@@ -1,0 +1,41 @@
+/* The original stylesheet is the light palette; dark is the default. */
+:root { color-scheme: dark; color: #e2e8df; background: #171d19; }
+:root[data-theme="light"] { color-scheme: light; color: #292c28; background: #f6f5ef; }
+.header-actions { display: flex; align-items: center; gap: 20px; }
+
+:root:not([data-theme="light"]) a { color: #b5d2b4; }
+:root:not([data-theme="light"]) .header a { color: #d3dfd1; }
+:root:not([data-theme="light"]) .eyebrow,
+:root:not([data-theme="light"]) .field-label,
+:root:not([data-theme="light"]) .row-labels,
+:root:not([data-theme="light"]) .count { color: #a7b9a6; }
+:root:not([data-theme="light"]) .header p,
+:root:not([data-theme="light"]) .intro p,
+:root:not([data-theme="light"]) .section-heading p,
+:root:not([data-theme="light"]) .about { color: #b1bcb0; }
+:root:not([data-theme="light"]) .intro,
+:root:not([data-theme="light"]) footer { border-color: #3b493d; }
+:root:not([data-theme="light"]) .tag { color: #c4d9c2; background: #304133; }
+:root:not([data-theme="light"]) .panel { background: #222c25; border-color: #39473c; box-shadow: 0 3px 12px #0003; }
+:root:not([data-theme="light"]) input,
+:root:not([data-theme="light"]) select,
+:root:not([data-theme="light"]) .results pre { color: #e2e8df; background: #19221c; border-color: #435246; }
+:root:not([data-theme="light"]) input::placeholder { color: #a5b1a5; }
+:root:not([data-theme="light"]) .secondary { color: #d4e4d1; background: #2a372d; border-color: #536655; }
+:root:not([data-theme="light"]) .check { color: #d1dbcf; }
+:root:not([data-theme="light"]) .step,
+:root:not([data-theme="light"]) .hint,
+:root:not([data-theme="light"]) .row-labels small,
+:root:not([data-theme="light"]) .file-actions span,
+:root:not([data-theme="light"]) footer,
+:root:not([data-theme="light"]) .remove { color: #acbaaa; }
+:root:not([data-theme="light"]) .link-button { color: #b5d2b4; }
+:root:not([data-theme="light"]) .file-actions { border-color: #3b493d; }
+:root:not([data-theme="light"]) code { color: #c4dcc1; background: #334337; }
+:root:not([data-theme="light"]) .about h2 { color: #e2e8df; }
+:root:not([data-theme="light"]) .notice { color: #f0e5a8; background: #4a4528; }
+:root:not([data-theme="light"]) .notice.error { color: #ffd0c8; background: #542d2a; }
+
+@media (max-width: 650px) {
+  .header-actions { flex-direction: column; align-items: flex-end; gap: 12px; }
+}

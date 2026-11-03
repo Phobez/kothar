@@ -6,7 +6,7 @@ Kothar takes its name from Kothar-wa-Khasis (Ugaritic: 𐎋𐎘𐎗𐎆𐎃𐎒�
 
 ## Use
 
-Open the site, define named subpatterns and a main pattern, then generate words. Slash-separated options, square and optional round brackets, weights, quoted literals, and fragment filters follow Awkwords syntax. The requested count is the number of attempts: filters and duplicate removal can reduce the number of words returned. Import and export use the `.awkw` format, including legacy Windows-1250 imports. See the [original help](https://github.com/nai888/awkwords/blob/master/help.html) for details.
+Open the site, define named subpatterns and a main pattern, then generate words. Slash-separated options, square and optional round brackets, weights, quoted literals, and fragment filters follow Awkwords syntax. The requested count is the number of attempts: filters and duplicate removal can reduce the number of words returned. Import and export use the `.awkw` format, including legacy Windows-1250 imports. The site defaults to dark mode; the header toggle switches themes and remembers your choice in the browser. See the [original help](https://github.com/nai888/awkwords/blob/master/help.html) for details.
 
 For local development, serve the repository with any static HTTP server, for example `python3 -m http.server`, and open `http://localhost:8000`. Run tests with `npm test` (Node.js 18 or newer). There are no runtime dependencies.
 
