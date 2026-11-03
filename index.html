@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="An Awkwords-compatible word generator for constructed languages.">
   <title>Kothar — word generator</title>
+  <script>
+    try {
+      if (localStorage.getItem('kothar-theme') === 'light') document.documentElement.dataset.theme = 'light';
+    } catch { /* Dark remains the default when storage is unavailable. */ }
+  </script>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
   <script type="module" src="src/app.js"></script>
 </head>
 <body>
-  <header class="header"><div><span class="eyebrow">A TOOL FOR MAKING WORLDS</span><h1>Kothar<span>.</span></h1><p>Give shape to the words you imagine.</p></div><a href="#about">About &amp; help ↗</a></header>
+  <header class="header"><div><span class="eyebrow">A TOOL FOR MAKING WORLDS</span><h1>Kothar<span>.</span></h1><p>Give shape to the words you imagine.</p></div><div class="header-actions"><button type="button" class="secondary" id="theme-toggle" aria-pressed="false">Light mode</button><a href="#about">About &amp; help ↗</a></div></header>
   <main>
     <div class="intro"><div><span class="eyebrow">THE WORD FORGE</span><h2>Word generator</h2><p>Define your sounds, make a pattern, and see what emerges.</p></div><span class="tag">AWKWORDS COMPATIBLE</span></div>
     <form id="generator">

@@ -2,6 +2,19 @@ import { compile, generate } from './generator.js';
 import { loadSettings, saveSettings } from './files.js';
 
 const $ = (selector) => document.querySelector(selector);
+const themeToggle = $('#theme-toggle');
+function updateThemeToggle() {
+  const light = document.documentElement.dataset.theme === 'light';
+  themeToggle.textContent = light ? 'Dark mode' : 'Light mode';
+  themeToggle.setAttribute('aria-pressed', String(light));
+}
+updateThemeToggle();
+themeToggle.addEventListener('click', () => {
+  const theme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = theme;
+  try { localStorage.setItem('kothar-theme', theme); } catch { /* The toggle still works without storage. */ }
+  updateThemeToggle();
+});
 const rows = $('#rows');
 const defaults = { rows: [{ name: 'V', value: 'a/i/u' }, { name: 'C', value: 'p/t/k/s/m/n' }, { name: 'N', value: 'm/n' }], pattern: 'CV(CV)(N)', count: 100, newline: false, unique: false };
 
