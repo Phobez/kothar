@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An Awkwords-compatible word generator for constructed languages.">
+  <title>Kothar — word generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <header class="header"><div><span class="eyebrow">A TOOL FOR MAKING WORLDS</span><h1>Kothar<span>.</span></h1><p>Give shape to the words you imagine.</p></div><a href="#about">About &amp; help ↗</a></header>
+  <main>
+    <div class="intro"><div><span class="eyebrow">THE WORD FORGE</span><h2>Word generator</h2><p>Define your sounds, make a pattern, and see what emerges.</p></div><span class="tag">AWKWORDS COMPATIBLE</span></div>
+    <form id="generator">
+      <section class="panel"><div class="section-heading"><div><span class="step">01</span><h3>Subpatterns</h3><p>Assign a letter to each group of sounds or fragments.</p></div><button type="button" class="secondary" id="add">+ Add row</button></div>
+        <div class="row-labels"><span>LETTER</span><span>OPTIONS <small>separated by /</small></span></div><div id="rows"></div>
+      </section>
+      <section class="panel"><div class="section-heading"><div><span class="step">02</span><h3>Pattern</h3><p>Combine subpatterns to describe the shape of your words.</p></div></div><label for="pattern" class="field-label">MAIN PATTERN</label><input id="pattern" type="text" required spellcheck="false"><p class="hint">Try <code>CV(CV)(N)</code> · Parentheses make a group optional.</p></section>
+      <section class="panel"><div class="section-heading"><div><span class="step">03</span><h3>Generate</h3><p>Choose your output settings and start creating.</p></div></div><div class="controls"><label class="count">NUMBER OF ATTEMPTS<input id="count" type="number" min="1" max="9999" required></label><label class="check"><input id="newline" type="checkbox"> One word per line</label><label class="check"><input id="unique" type="checkbox"> Filter duplicates</label><button class="primary" type="submit">Generate words <span>→</span></button></div><div class="file-actions"><button type="button" class="link-button" id="save">↓ Save settings</button><label class="link-button" for="open">↑ Open settings</label><input type="file" id="open" accept=".awkw,.awk,text/plain" hidden><span>.awkw compatible</span></div></section>
+    </form>
+    <section class="panel results" aria-labelledby="results-title"><div class="section-heading"><div><span class="eyebrow">YOUR CREATIONS</span><h3 id="results-title">Generated words</h3></div><button type="button" class="secondary" id="copy">Copy words</button></div><div id="message" role="status" aria-live="polite"></div><pre id="output">Your words will appear here.</pre><p id="stats" class="hint"></p></section>
+    <section id="about" class="about"><div><span class="eyebrow">A LITTLE GUIDANCE</span><h2>The language of patterns</h2><p>Use capital letters for subpatterns and lowercase text for literal sounds. Spaces outside quotes are ignored.</p><dl><dt><code>a/b</code></dt><dd>Choose one option. Add a weight, as in <code>a/b*3</code>.</dd><dt><code>[a/b]</code></dt><dd>Group options; <code>(a/b)</code> makes the group optional.</dd><dt><code>"text"</code></dt><dd>Write special characters or capitals literally.</dd><dt><code>[VV]^aa</code></dt><dd>Discard a generated word when the preceding fragment matches the filter.</dd></dl><p>Each attempt can be filtered out, so the output may contain fewer words than requested. <a href="https://github.com/nai888/awkwords/blob/master/help.html">Read the original Awkwords help ↗</a></p></div><div><span class="eyebrow">ABOUT KOTHAR</span><h2>Made for makers</h2><p>Kothar takes its name from Kothar-wa-Khasis (Ugaritic: 𐎋𐎘𐎗𐎆𐎃𐎒𐎒; <i>Kôṯaru-wa-Ḫasisu</i>), an Ugaritic divine artisan associated with architecture, smithing, music, and magic. Some scholars consider the name to represent two gods, Kothar and Khasis, combined into one.</p><p>Kothar is a distinct, browser-based implementation inspired by <a href="https://github.com/nai888/awkwords">Awkwords 1.2</a>, created by Petr Mejzlík. It is not the original Awkwords.</p></div></section>
+  </main><footer><span>KOTHAR · A WORD FORGE</span><a href="https://github.com/Phobez/kothar">View on GitHub ↗</a></footer>
+</body></html>
